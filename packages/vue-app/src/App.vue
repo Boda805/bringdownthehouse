@@ -1,17 +1,21 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/ethereumLogo.png" width="205px" height="342px" />
-    <HelloWorld msg="Welcome to Your Ethereum App" />
+    <ConnectWallet address1="grab user address" />
+    <HelloWorld msg="Bring Down the House" />
+    
   </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import ConnectWallet from "./components/ConnectWallet";
 
 export default {
   name: "EthereumApp",
   components: {
     HelloWorld,
+    ConnectWallet,
   },
 };
 </script>

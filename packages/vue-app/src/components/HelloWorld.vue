@@ -7,7 +7,7 @@
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
     <!-- Remove the "display: none" style and open the JavaScript console in the browser to see what this function does -->
-    <button id="readOnchainData" style="display: none;" @click="readOnchainData">Read On-Chain Balance</button>
+    <button id="readOnchainData" @click="readOnchainData">Read On-Chain Balance</button>
     <h3>Learn Ethereum</h3>
     <ul>
       <li>
@@ -58,8 +58,10 @@
   import { getDefaultProvider } from "@ethersproject/providers";
   import { addresses, abis } from "@project/contracts";
   import GET_TRANSFERS from "../graphql/subgraph";
+  import { defineComponent, onMounted  } from 'vue'
 
-  export default {
+  export default defineComponent({
+    name: 'HelloWorld',
     methods: {
       readOnchainData: async function () {
         // Should replace with the end-user wallet, e.g. Metamask
@@ -68,15 +70,18 @@
         // Read more about ethers.js on https://docs.ethers.io/v5/api/contract/contract/
         const ceaErc20 = new Contract(addresses.ceaErc20, abis.erc20, defaultProvider);
         // A pre-defined address that owns some CEAERC20 tokens
-        const tokenBalance = await ceaErc20.balanceOf("0x3f8CB69d9c0ED01923F11c829BaE4D9a4CB6c82C");
+        const tokenBalance = await ceaErc20.balanceOf("0x8A4F0832F661DB078A535AC0E427C41F1BD90820");
         console.log({ tokenBalance: tokenBalance.toString() });
       },
     },
-    name: "HelloWorld",
     props: {
       msg: String,
     },
-    async mounted() {
+    
+    
+    setup() {
+
+      onMounted(async () => {
       try {
         const { data, loading, stale } = await this.$apollo.query({
           query: GET_TRANSFERS,
@@ -87,8 +92,12 @@
       } catch (error) {
         console.error("Error while pulling data from the subgraph:", error);
       }
+      console.log("testtesttest");
+      });
+      
     },
-  };
+
+  });
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
