@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/ethereumLogo.png" width="205px" height="342px" />
-    <ConnectWallet address1="grab user address" />
+    <Header />
     <HelloWorld msg="Bring Down the House" />
     
   </div>
@@ -9,13 +8,15 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
-import ConnectWallet from "./components/ConnectWallet";
+import Header from "./components/Header";
+
+
 
 export default {
   name: "EthereumApp",
   components: {
     HelloWorld,
-    ConnectWallet,
+    Header,
   },
 };
 </script>
@@ -27,6 +28,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

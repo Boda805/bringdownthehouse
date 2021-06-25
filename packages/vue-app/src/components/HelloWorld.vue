@@ -8,48 +8,7 @@
     </p>
     <!-- Remove the "display: none" style and open the JavaScript console in the browser to see what this function does -->
     <button id="readOnchainData" @click="readOnchainData">Read On-Chain Balance</button>
-    <h3>Learn Ethereum</h3>
-    <ul>
-      <li>
-        <a href="https://ethereum.org/developers/#getting-started" target="_blank" rel="noopener">Getting Started</a>
-      </li>
-      <li>
-        <a href="https://ethereum.org/wallets/" target="_blank" rel="noopener">Wallets</a>
-      </li>
-      <li>
-        <a href="https://www.reddit.com/r/ethereum/" target="_blank" rel="noopener">Reddit</a>
-      </li>
-    </ul>
-    <h3>Learn Vue</h3>
-    <ul>
-      <li>
-        <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
-      </li>
-      <li>
-        <a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a>
-      </li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a>
-      </li>
-      <li>
-        <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
-      </li>
-    </ul>
-    <h3>Learn The Graph</h3>
-    <ul>
-      <li>
-        <a href="https://thegraph.com/docs/quick-start" target="_blank" rel="noopener">Core Docs</a>
-      </li>
-      <li>
-        <a href="https://discord.gg/vtvv7FP" target="_blank" rel="noopener">Community Chat</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/graphprotocol" target="_blank" rel="noopener">Twitter</a>
-      </li>
-    </ul>
+
   </div>
 </template>
 

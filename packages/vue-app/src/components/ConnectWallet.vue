@@ -1,16 +1,18 @@
 <template>
     <div>
-        <h1>Connect Wallet</h1>   
-        <div>{{ address }}</div>
-        <Button @click="connectWallet">Connect Wallet</Button>
-        <a-button type="primary">Primary</a-button>
+        <a-button v-if="address.length === 0" type="primary" @click="connectWallet">Connect Wallet</a-button>
+        <a-button v-if="address.length !== 0" type="primary">{{ address }}</a-button>
     </div>
 </template>
 
 <script>
+
 import { ref, defineComponent } from 'vue'
 import { ethers } from "ethers";
-//import { Button } from "ant-design-vue";
+
+
+
+
 export default defineComponent({
   name: 'ConnectWallet',
   props: {
@@ -20,6 +22,7 @@ export default defineComponent({
         }
     },
     setup() {
+      
         const address = ref([])
         const provider = ref()
         const signer = ref()

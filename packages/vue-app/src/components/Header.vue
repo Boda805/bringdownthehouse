@@ -1,80 +1,76 @@
 <template>
     <div>
-    <a-page-header
-      style="border: 1px solid rgb(235, 237, 240)"
-      title="Title"
-      sub-title="This is a subtitle"
-      @back="() => $router.go(-1)"
-    >
-      <template slot="extra">
-        <a-button key="3">
-          Operation
-        </a-button>
-        <a-button key="2">
-          Operation
-        </a-button>
-        <a-button key="1" type="primary">
-          Primary
-        </a-button>
+        <a-layout class="layout">
+        <a-layout-header>
+          <div class="logo" />
+          <a-menu
+            theme="dark"
+            mode="horizontal"
+
+            :style="{ lineHeight: '64px' }"
+          >
+            <a-menu-item key="1">nav 1</a-menu-item>
+            <a-menu-item key="2">nav 2</a-menu-item>
+            <a-menu-item key="3"><ConnectWallet /></a-menu-item>
+                
+          </a-menu>
+      
+        </a-layout-header> 
+        </a-layout>    
+
+<a-card hoverable style="width: 300px">
+    <template #cover>
+      <img
+        alt="example"
+        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+      />
+    </template>
+    <template class="ant-card-actions" #actions>
+      <setting-outlined key="setting" />
+      <edit-outlined key="edit" />
+      <ellipsis-outlined key="ellipsis" />
+    </template>
+    <a-card-meta title="Card title" description="This is the description">
+      <template #avatar>
+        <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
       </template>
-      <a-descriptions size="small" :column="3">
-        <a-descriptions-item label="Created">
-          Lili Qu
-        </a-descriptions-item>
-        <a-descriptions-item label="Association">
-          <a>421421</a>
-        </a-descriptions-item>
-        <a-descriptions-item label="Creation Time">
-          2017-01-10
-        </a-descriptions-item>
-        <a-descriptions-item label="Effective Time">
-          2017-10-10
-        </a-descriptions-item>
-        <a-descriptions-item label="Remarks">
-          Gonghu Road, Xihu District, Hangzhou, Zhejiang, China
-        </a-descriptions-item>
-      </a-descriptions>
-    </a-page-header>
-    <br />
-    <a-page-header title="Title" sub-title="This is a subtitle" @back="() => $router.go(-1)">
-      <template slot="tags">
-        <a-tag color="blue">
-          Running
-        </a-tag>
-      </template>
-      <template slot="extra">
-        <a-button key="3">
-          Operation
-        </a-button>
-        <a-button key="2">
-          Operation
-        </a-button>
-        <a-button key="1" type="primary">
-          Primary
-        </a-button>
-      </template>
-      <a-row type="flex">
-        <a-statistic title="Status" value="Pending" />
-        <a-statistic
-          title="Price"
-          prefix="$"
-          :value="568.08"
-          :style="{
-            margin: '0 32px',
-          }"
-        />
-        <a-statistic title="Balance" prefix="$" :value="3345.08" />
-      </a-row>
-    </a-page-header>
-  </div>
+    </a-card-meta>
+  </a-card>
+   
+        
+    </div>
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
+
+import { defineComponent } from 'vue';
+import ConnectWallet from "./ConnectWallet";
+
+
+
 
 export default defineComponent({
+    name: 'Header',
+    components: {
+      ConnectWallet,
+  },
     setup() {
         
     },
 })
 </script>
+
+<style scoped>
+
+label {
+  margin: 0 0.5em;
+  font-weight: bold;
+}
+
+code {
+  background-color: #eee;
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: #304455;
+}
+</style>
