@@ -4,18 +4,19 @@ import VueApollo from "vue-apollo";
 import { ApolloClient } from "apollo-client";
 import { createHttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
-
+import router from './router'
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
-
+import VueRouter from 'vue-router'
 import App from "./App.vue";
 
 const app = createApp(App);
 
 app.config.productionTip = false;
-
+app.use(router)
 app.use(Antd).mount('#app');
 
+Vue.use(VueRouter)
 
 // Cache implementation
 const cache = new InMemoryCache();
