@@ -1,5 +1,5 @@
 <template>
     <div>
-        White Paper View!!!!!
+        White Paper 
     </div>
 </template>
